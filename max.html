@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest value -03</title>
+</head>
+
+<body>
+    <script>
+        var x = Number(prompt("Value 1"));
+        var y = Number(prompt("Value 2"));
+        var z = Number(prompt("Value 3"));
+        var large = null;
+        if (x >= y && x >= z) { large = x }
+        else if (y >= x && y >= z) { large = y }
+        else { large = z };
+
+        document.write("Largest value is  " + large)
+    </script>
+</body>
+
+</html>
