@@ -2,25 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime-01</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 
 <body>
-    <script>
-        const isPrime = x => {
-            for (let i = 2; i < x; i++) {
-                if (x % i === 0) { return false; }
-            }
-            return x > 1;
-        };
-        var p = Number(prompt());
-        if (isPrime(p)) { document.write(p + "  is prime") }
-        else { document.write(p + "  is not prime") }
-
-    </script>
+	<script>
+		// const isPrime = x => {
+		// 	for (let i = 2; i < x; i++) {
+		// 		if (x % i === 0) {
+		// 			return false;
+		// 		}
+		// 	}
+		// 	return x > 1
+		// }
+		// let p =isPrime (prompt("Enter number"));
+		// if (p) { document.write(p + " " + "This is Prime number" + "<br>") }
+		// else (document.write( p + " " + "This is not a Prime number"))
+		const isPrime = x=> {
+			for (let i = 2; i < x; i++){
+				if (x % i === 0){return false;}				
+			}
+			return x > 1;
+		}
+		let p = Number(prompt("Enter Number"));
+		if (isPrime(p)) {document.write(p+" "+"This is Prime")}
+		else{document.write(p +" "+"This is not Prime")}
+	</script>
 </body>
 
 </html>
