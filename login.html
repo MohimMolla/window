@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        Email Address : <input type="email" id="email">
+        <span id="emailerr"></span> <br>
+        Password :
+        <input type="password" id="pass">
+        <span id="passerr"></span> <br>
+        <input type="button" value="Login" onclick="validForm()">
+    </form>
+    <script>
+        function validForm() {
+            error = false;
+            document.getElementById("emailerr").innerHTML = "";
+            document.getElementById("passerr").innerHTML = "";
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("pass").value;
+            let regxp = /\S+@\S+\.\S+/;
+            if (regxp.test(email)) {}
+            else{alert("Invalid Email"); error=true};
+            if(pass.length < 4 || pass.length >8){
+                alert("invalid pass");
+                error=true;
+            }
+            if(!error) { alert("OK");}          
+        }
+    </script>
+
+</body>
+
+</html>
