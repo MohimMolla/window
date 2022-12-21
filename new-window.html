@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Window</title>
+</head>
+
+<body>
+    <form action="b" name="a">
+        Name: <input type="text" id="name"><br>
+        Contact: <input type="text" id="contact"><br>
+        Remark: <textarea name="" id="remark" cols="30" rows="10"></textarea> <br>
+        sex: Male <input type="radio" name="s" value="male">|
+        Femal <input type="radio" name="s" value="femal">| <br>
+        Courses: NT <input type="checkbox" name="course" value="nt">|
+        IDA <input type="checkbox" name="course" value="ida">|
+        DDD <input type="checkbox" name="course" value="ddd">|
+        ESAD <input type="checkbox" name="course" value="esad">| <br>
+        Location:
+        <select name="" id="location">
+            <option value="mirpur">Mirpur</option>
+            <option value="dhamondi">Dhamondi</option>
+            <option value="faridpur">Faridpur</option>
+        </select> <br>
+        <input type="button" value="Submit" onclick="valuecheack()">
+        <!-- <button type="button" value="Submit" onclick="valuecheack()"></button> -->
+    </form>
+    <script>
+        function valuecheack() {
+            let name = document.getElementById("name").value;
+            let contact = document.getElementById("contact").value;
+            let remark = document.getElementById("remark").value;
+            // let sex = document.a.s.value;
+            let sex = document.a.s.value;
+            let location = document.getElementById("location").value;
+            // let course=[];
+            // var courseBox= document.querySelectorAll('inout[name="course"]:checked');
+            // for(var checkbox of courseBox){
+            //     course.push(checkbox.value)
+            // }
+            let course=[]
+            var courserrBox = document.querySelectorAll('input[name="course"]:checked');
+            for (var checkbox of courserrBox) {
+                course.push(checkbox.value)
+
+            }
+
+            let w = window.open("", "", "width=100px,hight=100px");
+            w.document.write("Name :" + " " + name + "<br>")
+            w.document.write("Contact :" + " " + contact + "<br>")
+            w.document.write("Remark :" + " " + remark + "<br>")
+            w.document.write("Sex :" + " " + sex + "<br>")
+            w.document.write("Course :" + " " + course + "<br>")
+            w.document.write("Location :" + " " + location + "<br>")
+        }
+    </script>
+</body>
+
+</html>
