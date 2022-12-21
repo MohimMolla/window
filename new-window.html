@@ -2,92 +2,61 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<style>
-		div {
-			width: 50%;
-			margin: 0 auto;
-
-		}
-
-		label {
-			display: inline-block;
-			width: 100px;
-			margin-bottom: 10px;
-		}
-
-		#btn {
-			/* text-align: center; */
-			align-items: center;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Window</title>
 </head>
 
 <body>
-	<div id="f">
-		<fieldset>
-			<form name="a" action="">
-				<label for="m">User Name :</label>
-				<input type="text" name="m" id="uname"> <br>
-				<label for="c">Contact :</label>
-				<input type="text" name="c" id="cont"> <br>
-				<label for="r">Remark</label>
-				<textarea name="r" id="rem" cols="10" rows="5"></textarea> <br>
-				<label for="s">Sex</label>
-				<!-- Male<input type="radio"> | -->
-				Male<input type="radio" name="s" value="male"> |
-				Female<input type="radio" name="s" value="female"> |
-				Other<input type="radio" name="s" value="other"> |<br>
-				<label for="l">Course </label>
-				NT:<input type="checkbox" name="l" value="nt">
-				WDPF:<input type="checkbox" name="l" value="wdpf">
-				DDD:<input type="checkbox" name="l" value="ddd">
-				GAVE:<input type="checkbox" name="l" value="gave"><br>
-				<label for="location">Location</label>
-				<select name="" id="location">
-					<option value="mr">Mirpur</option>
-					<option value="fr">Farmgate</option>
-					<option value="dhan">Dhanmondi</option>
-				</select><br>
-				<button id="btn" type="button" onclick="checkForm()">Submit</button>
-			</form>
-		</fieldset>
-	</div>
-	<script>
-		function checkForm() {
-			let uname = document.getElementById("uname").value;
-			let cont = document.getElementById("cont").value;
-			let rem = document.getElementById("rem").value;
-			//let rem = document.getElementById("rem").value;
-			let sex = document.a.s.value;
-			//let sex = document.getElementById.a.s.value;
-			let coursearr = document.getElementsByName("l").value;
-		// 	let course = [];
-		// 	for (let i = 0; i < coursearr.length; i++) {
-		// 		if (coursearr[i].checked) {
-		// 			course.push(coursearr[i].value)
-		// 		}
+    <form action="b" name="a">
+        Name: <input type="text" id="name"><br>
+        Contact: <input type="text" id="contact"><br>
+        Remark: <textarea name="" id="remark" cols="30" rows="10"></textarea> <br>
+        sex: Male <input type="radio" name="s" value="male">|
+        Femal <input type="radio" name="s" value="femal">| <br>
+        Courses: NT <input type="checkbox" name="course" value="nt">|
+        IDA <input type="checkbox" name="course" value="ida">|
+        DDD <input type="checkbox" name="course" value="ddd">|
+        ESAD <input type="checkbox" name="course" value="esad">| <br>
+        Location:
+        <select name="" id="location">
+            <option value="mirpur">Mirpur</option>
+            <option value="dhamondi">Dhamondi</option>
+            <option value="faridpur">Faridpur</option>
+        </select> <br>
+        <input type="button" value="Submit" onclick="valuecheack()">
+        <!-- <button type="button" value="Submit" onclick="valuecheack()"></button> -->
+    </form>
+    <script>
+        function valuecheack() {
+            let name = document.getElementById("name").value;
+            let contact = document.getElementById("contact").value;
+            let remark = document.getElementById("remark").value;
+            // let sex = document.a.s.value;
+            let sex = document.a.s.value;
+            let location = document.getElementById("location").value;
+            // let course=[];
+            // var courseBox= document.querySelectorAll('inout[name="course"]:checked');
+            // for(var checkbox of courseBox){
+            //     course.push(checkbox.value)
+            // }
+            let course=[]
+            var courserrBox = document.querySelectorAll('input[name="course"]:checked');
+            for (var checkbox of courserrBox) {
+                course.push(checkbox.value)
 
-		// 	}
-		// }
-		let course = [];
-		var markedCheckbox = document.querySelectorAll('input[name="l"]:checked');
-		for (var checkbox of markedCheckbox) {
-			//document.getElementById("result").append(checkbox.value + ' ');  
-			course.push(checkbox.value);
-		}
-		var myaddress =document.getElementById("location").value;
-		var w = window.open(" ", " ", "width=400", "height=300");
-		w.document.write("User Name :" + uname + "<br>");
-		w.document.write("Contact :" + cont + "<br>");
-		w.document.write("Remark :" + rem + "<br>");
-		w.document.write("Sex :" + sex + "<br>");
-		w.document.write("Course :" + course + "<br>");
-		w.document.write("Location :" + myaddress + "<br>");}
-	</script>
+            }
+
+            let w = window.open("", "", "width=100px,hight=100px");
+            w.document.write("Name :" + " " + name + "<br>")
+            w.document.write("Contact :" + " " + contact + "<br>")
+            w.document.write("Remark :" + " " + remark + "<br>")
+            w.document.write("Sex :" + " " + sex + "<br>")
+            w.document.write("Course :" + " " + course + "<br>")
+            w.document.write("Location :" + " " + location + "<br>")
+        }
+    </script>
 </body>
 
 </html>
